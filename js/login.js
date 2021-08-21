@@ -3,4 +3,36 @@
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
 
+    document.getElementById("sudmit").addEventListener("click",function() {
+        let inputEmail = document.getElementById("inputEmail");
+        let inputPassword = document.getElementById("inputPassword");
+        let complete = true;
+
+        if (inputEmail.value === "") {
+            inputEmail.classList.add("invalid");
+            complete = false;
+        } else {
+            inputEmail.classList.remove("invalid");
+        }
+
+        if (inputPassword.value === "") {
+            inputPassword.classList.add("invalid");
+            complete = false;
+        } else {
+            inputPassword.classList.remove("invalid");
+        }
+
+
+        if(complete)  {
+            window.location = "principal.html";
+        } else {
+            alert("Debes ingresar los datos!")
+        }
+    });
+
+
+
+
+
+
 });
