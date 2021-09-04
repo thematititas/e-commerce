@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         let inputEmail = document.getElementById("inputEmail");
         let inputPassword = document.getElementById("inputPassword");
         let complete = true;
+        let usuario = null;
 
         if (inputEmail.value === "") {
             inputEmail.classList.add("invalid");
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
         if(complete)  {
+            usuario = localStorage.setItem('nameUsuario',document.getElementById("inputEmail").value);
             window.location = "principal.html";
         } else {
             alert("Debes ingresar los datos!")
