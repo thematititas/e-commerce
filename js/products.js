@@ -16,8 +16,10 @@ function sortArray(Array) {
         Array.sort(function (a, b) { return b.soldCount - a.soldCount });
     }
 }
-
-
+function ver(id) {
+   
+    localStorage.setItem('info', id);
+}
 function showArray(Array) {
     let contents = "";
 
@@ -32,7 +34,7 @@ function showArray(Array) {
 
             if ((product.name.toLowerCase().includes(buscar.value.toLowerCase())) || (buscar.value === "")) {
                 contents += `
-        <a href="product-info.html" class="list-group-item list-group-item-action">
+        <a href="product-info.html" class="list-group-item list-group-item-action" onclick="ver(`+ product.name +`)">
             <div class="row">
                 <div class="col-3">
                     <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
