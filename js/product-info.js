@@ -1,6 +1,8 @@
 var producto;
+var comentario;
 
-function showProduct(product,comments) {
+
+function showProduct(product, comments) {
 
     let content = "";
     let img = "";
@@ -23,6 +25,8 @@ function showProduct(product,comments) {
 </a>
 `;
     document.getElementById("cat-list-container").innerHTML = content;
+
+
 }
 
 
@@ -32,14 +36,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (result) {
         if (result.status === "ok") {
             comentario = result.data;
-        } 
+        }
 
-        getJSONData((PRODUCT_INFO_URL).then(function (resultObj) {
+        getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
             if (resultObj.status === "ok") {
                 resultObj.data.forEach(product => {
                     if (product.id == JSON.parse(localStorage.getItem('id')).productId) {
                         producto = product;
-
                         showProduct(producto, comentario);
                     }
                 });
