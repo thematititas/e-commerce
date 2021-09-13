@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "comentario": [
+            {
+                "score": 3,
+                "description": "Ya llevo un año con este auto y la verdad que tiene sus ventajas y desventajas",
+                "user": "juan_pedro",
+                "dateTime": "2020-02-25 18:03:52"
+            },
+            {
+                "score": 5,
+                "description": "Es un auto muy cómodo y en relación precio/calidad vale la pena!",
+                "user": "maria_sanchez",
+                "dateTime": "2020-01-17 13:42:18"
+            },
+            {
+                "score": 4,
+                "description": "Casi todo bien!, excepto por algún detalle de gusto personal",
+                "user": "paola_perez",
+                "dateTime": "2020-03-14 09:05:13"
+            },
+            {
+                "score": 5,
+                "description": "Un espectáculo el auto!",
+                "user": "pablo_gomez",
+                "dateTime": "2020-02-21 15:05:22"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "comentario": [
+            {
+                "score": 3,
+                "description": "Es muy pequeño",
+                "user": "juan_carlos",
+                "dateTime": "2020-02-25 20:25:52"
+            },
+            {
+                "score": 5,
+                "description": "Auto muy practico y economico",
+                "user": "maria_gomez",
+                "dateTime": "2020-01-17 13:42:18"
+            },
+            {
+                "score": 4,
+                "description": "Muy bien todo, lo uso todos los dias sin problemas",
+                "user": "paola_martinez",
+                "dateTime": "2020-03-14 22:15:19"
+            },
+            {
+                "score": 1,
+                "description": "Lo compre 0km y me vino con fallas de fabrica",
+                "user": "jorge_almada",
+                "dateTime": "2021-08-25 10:20:40"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "comentario": [
+            {
+                "score": 3,
+                "description": "Auto muy comodo pero gasta mucho en ruta",
+                "user": "daniel_martinez",
+                "dateTime": "2020-03-15 19:05:22"
+            },
+            {
+                "score": 5,
+                "description": "El mejor auto que eh comprado, lo uso hasta para hacer las compras",
+                "user": "rodolfo_alvarez",
+                "dateTime": "2020-01-17 13:42:18"
+            },
+            {
+                "score": 4,
+                "description": "Auto muy practico, llevo a mis hijos al colegio en él",
+                "user": "maria_alvez",
+                "dateTime": "2020-12-14 11:40:50"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "comentario": [
+            {
+                "score": 5,
+                "description": "Una maquina, nunca me deja tirado",
+                "user": "matias_silvera",
+                "dateTime": "2020-04-15 20:03:12"
+            },
+            {
+                "score": 4,
+                "description": "Vale la pena comprarlo, muy comodo y economico",
+                "user": "maria_marquez",
+                "dateTime": "2021-01-27 13:50:35"
+            }
+        ]
+    }
+]

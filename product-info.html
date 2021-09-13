@@ -27,17 +27,45 @@
   </nav>
   <div class="text-center p-4">
     <h2>Información de Productos</h2>
-    <p class="lead">Verás aquí toda la información del producto del sitio.</p>
+    <p class="lead">Verás aquí toda la información del producto seleccionado.</p>
   </div>
-  <main role="main" class="pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="list-group" id="cat-list-container">
+  <main>
+<div class="container mt-5">
+<h3 id="name"></h3>
+<hr>
+    <dl>
+      <dt>Descripción:</dt>
+      <dd>
+        <p id="Description"></p>
+      </dd>
+
+      <dt>Cantidad de productos en stock:</dt>
+      <dd>
+        <p id="Count"></p>
+      </dd>
+
+      <dt>Costo:</dt>
+      <dd>
+        <p id="Cost"></p>
+      </dd>
+
+      <dt>Imágenes:</dt>
+      <dd>
+        <div class="row text-center text-lg-left pt-2" id="Imagen">
         </div>
-      </div>
-    </div>
+      </dd>
+    </dl>
 
+    <hr>
+    <br>
+    <h3>Comentarios:</h3>
+    <br>
+    <div id="comentarios"></div>
+  </div>
+ 
 
+   
+  
   </main>
   <footer class="text-muted">
     <div class="container">
