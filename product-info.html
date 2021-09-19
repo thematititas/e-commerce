@@ -30,42 +30,58 @@
     <p class="lead">Verás aquí toda la información del producto seleccionado.</p>
   </div>
   <main>
-<div class="container mt-5">
-<h3 id="name"></h3>
-<hr>
-    <dl>
-      <dt>Descripción:</dt>
-      <dd>
-        <p id="Description"></p>
-      </dd>
+    <div class="container mt-4">
+      <h3 id="name" class="text-center p-3"></h3>
+      <hr>
+      <dl>
+        <dt>Descripción:</dt>
+        <dd>
+          <p id="Description"></p>
+        </dd>
 
-      <dt>Cantidad de productos en stock:</dt>
-      <dd>
-        <p id="Count"></p>
-      </dd>
+        <dt>Cantidad de productos en stock:</dt>
+        <dd>
+          <p id="Count"></p>
+        </dd>
 
-      <dt>Costo:</dt>
-      <dd>
-        <p id="Cost"></p>
-      </dd>
+        <dt>Costo:</dt>
+        <dd>
+          <p id="Cost"></p>
+        </dd>
 
-      <dt>Imágenes:</dt>
-      <dd>
-        <div class="row text-center text-lg-left pt-2" id="Imagen">
+        <dt>Imágenes:</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="Imagen">
+          </div>
+        </dd>
+      </dl>
+
+
+      <br>
+      <h3><u>Comentarios:</u></h3>
+      <hr>
+      <div id="comentarios"></div>
+      <br>
+      <div>
+        <h3> <u> Dejanos tu comentario del producto:</u></h3>
+        <br>
+        <textarea class="form-control" name="texto" id="texto" rows="5"
+          placeholder="Escribe aqui tu comentario:"></textarea>
+        <br>
+          <p>Calificación: 
+        <span class="fa fa-star" onclick="calificar(this)" style="cursor:pointer" id="1estrella"></span>
+        <span class="fa fa-star" onclick="calificar(this)" style="cursor:pointer" id="2estrella"></span>
+        <span class="fa fa-star" onclick="calificar(this)" style="cursor:pointer" id="3estrella"></span>
+        <span class="fa fa-star" onclick="calificar(this)" style="cursor:pointer" id="4estrella"></span>
+        <span class="fa fa-star" onclick="calificar(this)" style="cursor:pointer" id="5estrella"></span>
+      </p>
+        <div id="botoncito">
+          <button type="button" id="boton" class="btn btn-primary">Enviar</button>
         </div>
-      </dd>
-    </dl>
-
-    <hr>
-    <br>
-    <h3>Comentarios:</h3>
-    <br>
-    <div id="comentarios"></div>
-  </div>
- 
-
-   
-  
+      </div>
+      <br>
+      <hr>
+    </div>
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -84,6 +100,9 @@
       <div></div>
     </div>
   </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.all.min.js"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>

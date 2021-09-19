@@ -1,5 +1,7 @@
 var producto;
 var comentarios;
+var contador;
+
 
 
 function showImages(array) {
@@ -32,6 +34,18 @@ function showStars(numero) {
     return Stars;
 }
 
+function calificar(item){
+    contador = item.id[0];
+    let nombre = item.id.substring(1);
+    for(let i=0;i<5;i++){
+        if(i<contador){
+            document.getElementById((i+1)+nombre).style.color="orange";
+        } else {
+            document.getElementById((i+1)+nombre).style.color="black";
+        }
+    }
+}
+
 function showComentario(coment) {
 
     let comentario = "";
@@ -47,15 +61,41 @@ function showComentario(coment) {
     document.getElementById("comentarios").innerHTML += comentario;
 }
 
+function today() {
+    var f = new Date();
+    var res = f.getFullYear() + '-' + (f.getMonth()+1) + '-' + f.getDate() + ' ' + f.getHours() + ':' + f.getMinutes() + ':' + f.getSeconds();
+    return res;
+}
+
+
+
+function newObject(txt) {
+    var obj = {
+        user: localStorage.getItem('nameUsuario'),
+        description: txt,
+        dateTime: today(),
+        score: contador
+    };
+    return obj;
+}
+
+function limpiar(){
+    document.getElementById("texto").value = "";
+    for(let i=0;i<5;i++){
+        document.getElementById((i+1)+"estrella").style.color="black";
+    }
+}
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
+    
+
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (result) {
         if (result.status === "ok") {
-            result.data.forEach(Coment =>{
-                if (coment.id == JSON.parse(localStorage.getItem('id')).productId){
-                    comentarios = coment;
+            result.data.forEach(coment => {
+                if (coment.id == JSON.parse(localStorage.getItem('id')).productId) {
+                    comentarios = coment.comentario;
                 }
             });
         }
@@ -83,9 +123,48 @@ document.addEventListener("DOMContentLoaded", function (e) {
                             showComentario(comentario);
                         });
 
+                        var usu = localStorage.getItem('nameUsuario');
+                        if (usu) {
+                            showTucomentario()
+                        }
                     }
                 });
             }
         });
+    });
+    document.getElementById("boton").addEventListener("click", function () {
+        
+        if (localStorage.getItem('nameUsuario')) {
+            if (document.getElementById("texto").value) {
+                if(contador){
+                showComentario(newObject(document.getElementById("texto").value));
+                limpiar();
+                Swal.fire({
+                    title:'Gracias por tu comentario',
+                    icon:'success',
+                    confirmButtonText:'Cerrar',
+                });
+                } else {
+                    Swal.fire({
+                        title:'Debe poner una calificación primero',
+                        icon:'warning',
+                        confirmButtonText:'Cerrar',
+                    });
+                }
+            } else {
+                Swal.fire({
+                    title:'Para publicar debe hacer algun comentario',
+                    icon:'warning',
+                    confirmButtonText:'Cerrar',
+                });
+            };
+        } else {
+            Swal.fire({
+                title:'Debes estar logeado para hacer un comentario.',
+                html: '<a href="index.html">Haz click aquí para logearte</a>',   
+                icon:'error',
+                confirmButtonText:'Cerrar',
+            });
+        }
     });
 });

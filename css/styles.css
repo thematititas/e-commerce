@@ -145,3 +145,9 @@ a.custom-card:hover {
   border-color: red;
 }
 
+#name{
+  font-weight: bolder;
+}
+#botoncito{
+  text-align: right;
+}
