@@ -1,45 +1,55 @@
 var producto;
 var comentarios;
 var contador;
-var prodRel;
 
-function showProdRel(array){
+function showProdRel(array) { // funcion para mostrar los productos relacionados
     let contenido = "";
 
-        contenido += `
-        <a href="product-info.html" class="list-group-item list-group-item-action" onclick="ID(`+ array.id +`)">
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + array.images[0] + `" alt="">
-            </div>
-        </div>
-        `
-
-        document.getElementById("prodRel").innerHTML = contenido;
+    contenido += `
+    <div class="col-md-4">
+    <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+      <img class="bd-placeholder-img card-img-top"  src="`+array.images[0]+`">
+      <h4 class="m-3">`+array.name+`</h4>
+      <div class="card-body">
+      <h6 class="card-subtitle mb-2 text-muted">`+array.currency+` `+array.cost+`</h6>
+      </div>
+    </a>
+  </div>
+    `;
+    document.getElementById("prodRel").innerHTML += contenido;
 }
 
-
-
-function showImages(array) {
+function showImages(array) { // funcion para mostrar imagenes
 
     let contenido = "";
+    let contInd = "";
 
     for (let i = 0; i < array.length; i++) {
         let images = array[i];
+        let j = i;
+        if (i == 0) { // if para activar el carrusel desde la primera imagen
+            contenido += `
+        <div class="carousel-item active">
+      <img src="`+ images + `" class="d-block w-100 " alt="" width="" height="500">
+    </div>
+        `;
+            contInd += `<li data-target="#carouselExampleFade" data-slide-to="0" class="active"></li>`
 
-        contenido += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + images + `" alt="">
-            </div>
-        </div>
-        `
+        } else { // luego de la primera se ira pasando el active para el resto
+            contenido += `
+        <div class="carousel-item ">
+      <img src="`+ images + `" class="d-block w-100 " alt="" width="" height="500">
+    </div>
+        `;
+            contInd += ` <li data-target="#carouselExampleFade" data-slide-to="` + j + `"></li>`
+        }
+    };
+    document.getElementById("fotos").innerHTML += contenido;
+    document.getElementById("indicadores").innerHTML += contInd;
 
-        document.getElementById("Imagen").innerHTML = contenido;
-    }
 }
 
-function showStars(numero) {
+function showStars(numero) { // funcion para mostrar estrellas
     let Stars = "";
     for (let i = 0; i < numero; i++) {
         Stars += '<span class="fa fa-star checked"></span>'
@@ -47,10 +57,10 @@ function showStars(numero) {
     for (let i = 0; i < (5 - numero); i++) {
         Stars += '<span class="fa fa-star"></span>'
     }
-    return Stars;
+    return Stars; // devuelve una variable con la cantidad(numero) de estrellas
 }
 
-function calificar(item) {
+function calificar(item) { //funcion para califacar estrellas en los comentarios
     contador = item.id[0];
     let nombre = item.id.substring(1);
     for (let i = 0; i < 5; i++) {
@@ -62,14 +72,12 @@ function calificar(item) {
     }
 }
 
-function ID(id) {
-    localStorage.setItem('id',JSON.stringify({productId : id}));
- }
+function ID(id) { //funcion para modificar el id del localStorage
+    localStorage.setItem('id', JSON.stringify({ productId: id }));
+}
 
-function showComentario(coment) {
-
+function showComentario(coment) { //funcion para mostrar los comentarios
     let comentario = "";
-
     comentario += `
         <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">`+ coment.user + `:</h4>
@@ -81,15 +89,13 @@ function showComentario(coment) {
     document.getElementById("comentarios").innerHTML += comentario;
 }
 
-function today() {
+function today() { // funcion para generar la hora actual del PC
     var f = new Date();
     var res = f.getFullYear() + '-' + (f.getMonth() + 1) + '-' + f.getDate() + ' ' + f.getHours() + ':' + f.getMinutes() + ':' + f.getSeconds();
     return res;
 }
 
-
-
-function newObject(txt) {
+function newObject(txt) { // funcion para crear un objeto(nuevo comentario) con un usuario,hora actual,un texto y un score
     var obj = {
         user: localStorage.getItem('nameUsuario'),
         description: txt,
@@ -99,19 +105,15 @@ function newObject(txt) {
     return obj;
 }
 
-function limpiar() {
+function limpiar() { // funcion para limpiar la casilla de comentarios
     document.getElementById("texto").value = "";
     for (let i = 0; i < 5; i++) {
         document.getElementById((i + 1) + "estrella").style.color = "black";
     }
 }
 
-
 document.addEventListener("DOMContentLoaded", function (e) {
-
-
-
-    getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (result) {
+    getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (result) {//verificar el status de comentarios
         if (result.status === "ok") {
             result.data.forEach(coment => {
                 if (coment.id == JSON.parse(localStorage.getItem('id')).productId) {
@@ -120,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             });
         }
 
-        getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
+        getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {//verifica el status de info
             if (resultObj.status === "ok") {
                 resultObj.data.forEach(product => {
                     if (product.id == JSON.parse(localStorage.getItem('id')).productId) {
@@ -140,32 +142,24 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
                         showImages(producto.images);
 
-                        resultObj.data.forEach(productos => {
-                            producto.relatedProducts.forEach(rP => {
-                                if (productos.id == rP) {
-                                    showProdRel(productos);
-                                }
-                            });
+                        producto.relatedProducts.forEach(rP => {//recorre los PR y del arreglo principal muestra los productos
+                            showProdRel(resultObj.data[rP - 1]);
                         });
 
-                        comentarios.forEach(comentario => {
+                        comentarios.forEach(comentario => {//recorre los comentarios
                             showComentario(comentario);
                         });
-
-                        var usu = localStorage.getItem('nameUsuario');
-                        if (usu) {
-                            showTucomentario()
-                        }
                     }
                 });
             }
         });
     });
+
     document.getElementById("boton").addEventListener("click", function () {
 
-        if (localStorage.getItem('nameUsuario')) {
-            if (document.getElementById("texto").value) {
-                if (contador) {
+        if (localStorage.getItem('nameUsuario')) { // if estas logeado
+            if (document.getElementById("texto").value) { // if comentaste
+                if (contador) {// if calificaste
                     showComentario(newObject(document.getElementById("texto").value));
                     limpiar();
                     Swal.fire({
@@ -173,21 +167,21 @@ document.addEventListener("DOMContentLoaded", function (e) {
                         icon: 'success',
                         confirmButtonText: 'Cerrar',
                     });
-                } else {
+                } else {// else no calificaste
                     Swal.fire({
                         title: 'Debe poner una calificación primero',
                         icon: 'warning',
                         confirmButtonText: 'Cerrar',
                     });
                 }
-            } else {
+            } else {//no comentaste
                 Swal.fire({
                     title: 'Para publicar debe hacer algun comentario',
                     icon: 'warning',
                     confirmButtonText: 'Cerrar',
                 });
             };
-        } else {
+        } else {//no estas logeado
             Swal.fire({
                 title: 'Debes estar logeado para hacer un comentario.',
                 html: '<a href="index.html">Haz click aquí para logearte</a>',

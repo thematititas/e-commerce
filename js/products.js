@@ -7,7 +7,7 @@ var maxPrice = undefined;
 var condition = 1;
 var buscar;
 
-function sortArray(Array) {
+function sortArray(Array) { //funcion para ordenar el filtrado
     if (condition === 1) {
         Array.sort(function (a, b) { return a.cost - b.cost });
     } else if (condition === -1) {
@@ -16,10 +16,10 @@ function sortArray(Array) {
         Array.sort(function (a, b) { return b.soldCount - a.soldCount });
     }
 }
-function ID(id) {
+function ID(id) {// funcion para modificar el ID del localStorage
    localStorage.setItem('id',JSON.stringify({productId : id}));
 }
-function showArray(Array) {
+function showArray(Array) {// funcion para mostrar el arreglo
     let contents = "";
 
     sortArray(Array);
@@ -57,13 +57,11 @@ function showArray(Array) {
     document.getElementById("cat-list-container").innerHTML = contents;
 }
 
-
 document.addEventListener("DOMContentLoaded", function (e) {
 
     getJSONData(PRODUCTS_URL).then(function (result) {
         if (result.status === "ok") {
             productarray = result.data;
-
             showArray(productarray);
         }
     });

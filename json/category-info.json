@@ -1,0 +1,117 @@
+[{
+    "id":1,
+    "name": "Autos",
+    "description": "Los mejores precios en autos 0 kilómetro, de alta y media gama.",
+    "productCriteria": "Incluya aquí los productos que sean autos o relacionados: repuestos, accesorios, etc.",
+    "productCount": "122",
+    "images": [
+        "img/cat1.jpg",
+        "img/Autos/car1.jpg",
+        "img/Autos/car2.jpg",
+        "img/Autos/car3.jpg"
+    ]
+},
+{
+    "id":2,
+    "name": "Juguetes",
+    "description":"Encuentra aquí los mejores precios para niños/as de cualquier edad.",
+    "productCriteria": "Incluya aquí los productos que sean juguetes o relacionados: repuestos, accesorios, etc.",
+    "productCount": "354",
+    "images": [
+        "img/cat2.jpg",
+        "img/Juguetes/jug1.jpg",
+        "img/Juguetes/jug2.jpg",
+        "img/Juguetes/jug3.jpg"
+    ]
+},
+{
+    "id":3,
+    "name": "Muebles",
+    "description":"Muebles antiguos, nuevos y para ser armados por uno mismo.",
+    "productCriteria": "Incluya aquí los productos que sean muebles o relacionados: repuestos, accesorios, etc.",
+    "productCount": "157",
+    "images": [
+        "img/cat3.jpg",
+        "img/Muebles/mub1.jpg",
+        "img/Muebles/mub2.jpg",
+        "img/Muebles/mub3.jpg"
+    ]
+},
+{
+    "id":4,
+    "name": "Herramientas",
+    "description":"Herramientas para cualquier tipo de trabajo.",
+    "productCriteria": "Incluya aquí los productos que sean herramientas o relacionados: repuestos, accesorios, etc.",
+    "productCount": "452",
+    "images": [
+        "img/cat4.jpg",
+        "img/Herramientas/her1.jpg",
+        "img/Herramientas/her2.jpg",
+        "img/Herramientas/her3.jpg"
+    ]
+},
+{
+    "id":5,
+    "name": "Computadoras",
+    "description":"Todo en cuanto a computadoras, para uso de oficina y/o juegos.",
+    "productCriteria": "Incluya aquí los productos que sean computadoras o relacionados: repuestos, accesorios, etc.",
+    "productCount": "724",
+    "images": [
+        "img/cat5.jpg",
+        "img/Computadoras/comp1.jpg",
+        "img/Computadoras/comp2.jpg",
+        "img/Computadoras/comp3.jpg"
+    ]
+},
+{
+    "id":6,
+    "name": "Vestimenta",
+    "description":"Gran variedad de ropa, nueva y de segunda mano.",
+    "productCriteria": "Incluya aquí los productos queVestimenta/rop o relacionados: repuestos, accesorios, etc.",
+    "productCount": "841",
+    "images": [
+        "img/cat6.jpg",
+        "img/Vestimenta/rop1.jpg",
+        "img/Vestimenta/rop2.jpg",
+        "img/Vestimenta/rop3.jpg"
+    ]
+},
+{
+    "id":7,
+    "name": "Electrodométicos",
+    "description":"Todos los electrodomésticos modernos y de bajo consumo.",
+    "productCriteria": "Incluya aquí los productos que sean electrodomésticos o relacionados: repuestos, accesorios, etc.",
+    "productCount": "84",
+    "images": [
+        "img/cat7.jpg",
+        "img/Electrodomesticos/ele1.jpg",
+        "img/Electrodomesticos/ele2.jpg",
+        "img/Electrodomesticos/ele3.jpg"
+    ]
+},
+{
+    "id":8,
+    "name": "Deporte",
+    "description":"Toda la variedad de indumentaria para todo tipo de deporte.",
+    "productCriteria": "Incluya aquí los productos que sean deporte o relacionados: repuestos, accesorios, etc.",
+    "productCount": "574",
+    "images": [
+        "img/cat8.jpg",
+        "img/Deporte/dep1.jpg",
+        "img/Deporte/dep2.jpg",
+        "img/Deporte/dep3.jpg"
+    ]
+},
+{
+    "id":9,
+    "name": "Celulares",
+    "description": "Celulares de todo tipo para cubrir todas las necesidades.",
+    "productCriteria": "Incluya aquí los productos que sean celulares o relacionados: repuestos, accesorios, etc.",
+    "productCount": "124",
+    "images": [
+        "img/cat9.jpg",
+        "img/Celulares/cel1.jpg",
+        "img/Celulares/cel2.jpg",
+        "img/Celulares/cel3.jpg"
+    ]
+}]
