@@ -1,4 +1,4 @@
-const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
+const CATEGORIES_URL = "https://raw.githubusercontent.com/thematititas/e-commerce/master/json/category.json";
 const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
 const CATEGORY_INFO_URL = "https://raw.githubusercontent.com/thematititas/e-commerce/master/json/category-info.json";
 const PRODUCTS_URL = "https://raw.githubusercontent.com/thematititas/e-commerce/master/json/productos.json";

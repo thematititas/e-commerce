@@ -67,7 +67,7 @@
     "id":6,
     "name": "Vestimenta",
     "description":"Gran variedad de ropa, nueva y de segunda mano.",
-    "productCriteria": "Incluya aquí los productos queVestimenta/rop o relacionados: repuestos, accesorios, etc.",
+    "productCriteria": "Incluya aquí los productos que Vestimenta o relacionados: repuestos, accesorios, etc.",
     "productCount": "841",
     "images": [
         "img/cat6.jpg",

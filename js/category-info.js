@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(CATEGORY_INFO_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
             resultObj.data.forEach(element => {
-                if (element.id == JSON.parse(localStorage.getItem('category-id')).productId) {
+                if (element.id == JSON.parse(localStorage.getItem('category-id')).categoryId) {
 
-                    category = resultObj.data;
+                    category = element;
 
                     let categoryNameHTML = document.getElementById("categoryName");
                     let categoryDescriptionHTML = document.getElementById("categoryDescription");
