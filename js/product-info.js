@@ -7,11 +7,11 @@ function showProdRel(array) { // funcion para mostrar los productos relacionados
 
     contenido += `
     <div class="col-md-4">
-    <a href="product-info.html" onclick=IDprod(`+ array.id + `) class="card mb-4 shadow-sm custom-card">
+    <a href="product-info.html" onclick="IDprod('`+ array.name + `')" class="card mb-4 shadow-sm custom-card">
       <img class="bd-placeholder-img card-img-top"  src="`+ array.images[0] + `">
       <h4 class="m-3">`+ array.name + `</h4>
       <div class="card-body">
-      <h6 class="card-subtitle mb-2 text-muted">`+ array.currency + ` ` + array.cost + `</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Precio: `+ array.currency + ` ` + array.cost + `</h6>
       </div>
     </a>
   </div>
