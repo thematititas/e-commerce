@@ -124,80 +124,71 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {//verifica el status de info
             if (resultObj.status === "ok") {
-                resultObj.data.forEach(element => {
-                    if (element[0].category == JSON.parse(localStorage.getItem('category-id')).categoryId ||
-                        !(JSON.parse(localStorage.getItem('category-id')).categoryId)) {
+                resultObj.data.forEach(product => {
+                    if (product.name == JSON.parse(localStorage.getItem('product-id')).productId) {
+                        producto = product;
 
+                        let nameHTML = product.name;
+                        let descriptionHTML = product.description;
+                        let soldCountHTML = product.soldCount;
+                        let currencyHTML = product.currency;
+                        let costHTML = product.cost;
 
+                        document.getElementById("name").innerHTML = nameHTML;
+                        document.getElementById("Description").innerHTML = descriptionHTML;
+                        document.getElementById("Count").innerHTML = soldCountHTML;
+                        document.getElementById("Cost").innerHTML = currencyHTML;
+                        document.getElementById("Cost").innerHTML += " " + costHTML;
 
-                        element.forEach(product => {
+                        showImages(producto.images);
 
-                            if (product.name == JSON.parse(localStorage.getItem('product-id')).productId) {
-                                producto = product;
+                        producto.relatedProducts.forEach(rP => {//recorre los PR y del arreglo principal muestra los productos
+                            showProdRel(resultObj.data[rP - 1]);
+                        });
 
-                                let nameHTML = product.name;
-                                let descriptionHTML = product.description;
-                                let soldCountHTML = product.soldCount;
-                                let currencyHTML = product.currency;
-                                let costHTML = product.cost;
-
-                                document.getElementById("name").innerHTML = nameHTML;
-                                document.getElementById("Description").innerHTML = descriptionHTML;
-                                document.getElementById("Count").innerHTML = soldCountHTML;
-                                document.getElementById("Cost").innerHTML = currencyHTML;
-                                document.getElementById("Cost").innerHTML += " " + costHTML;
-
-                                showImages(producto.images);
-
-                                producto.relatedProducts.forEach(rP => {//recorre los PR y del arreglo principal muestra los productos
-                                    showProdRel(resultObj.data[rP - 1]);
-                                });
-
-                                comentarios.forEach(comentario => {//recorre los comentarios
-                                    showComentario(comentario);
-                                });
-                            }
-                        
+                        comentarios.forEach(comentario => {//recorre los comentarios
+                            showComentario(comentario);
                         });
                     }
-            });
-    }
+
+                });
+            }
         });
     });
 
-document.getElementById("boton").addEventListener("click", function () {
+    document.getElementById("boton").addEventListener("click", function () {
 
-    if (localStorage.getItem('nameUsuario')) { // if estas logeado
-        if (document.getElementById("texto").value) { // if comentaste
-            if (contador) {// if calificaste
-                showComentario(newObject(document.getElementById("texto").value));
-                limpiar();
+        if (localStorage.getItem('nameUsuario')) { // if estas logeado
+            if (document.getElementById("texto").value) { // if comentaste
+                if (contador) {// if calificaste
+                    showComentario(newObject(document.getElementById("texto").value));
+                    limpiar();
+                    Swal.fire({
+                        title: 'Gracias por tu comentario',
+                        icon: 'success',
+                        confirmButtonText: 'Cerrar',
+                    });
+                } else {// else no calificaste
+                    Swal.fire({
+                        title: 'Debe poner una calificación primero',
+                        icon: 'warning',
+                        confirmButtonText: 'Cerrar',
+                    });
+                }
+            } else {//no comentaste
                 Swal.fire({
-                    title: 'Gracias por tu comentario',
-                    icon: 'success',
-                    confirmButtonText: 'Cerrar',
-                });
-            } else {// else no calificaste
-                Swal.fire({
-                    title: 'Debe poner una calificación primero',
+                    title: 'Para publicar debe hacer algun comentario',
                     icon: 'warning',
                     confirmButtonText: 'Cerrar',
                 });
-            }
-        } else {//no comentaste
+            };
+        } else {//no estas logeado
             Swal.fire({
-                title: 'Para publicar debe hacer algun comentario',
-                icon: 'warning',
+                title: 'Debes estar logeado para hacer un comentario.',
+                html: '<a href="index.html">Haz click aquí para logearte</a>',
+                icon: 'error',
                 confirmButtonText: 'Cerrar',
             });
-        };
-    } else {//no estas logeado
-        Swal.fire({
-            title: 'Debes estar logeado para hacer un comentario.',
-            html: '<a href="index.html">Haz click aquí para logearte</a>',
-            icon: 'error',
-            confirmButtonText: 'Cerrar',
-        });
-    }
-});
+        }
+    });
 });
