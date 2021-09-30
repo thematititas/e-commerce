@@ -1,7 +1,7 @@
 var producto;
 var comentarios;
 var contador;
-var categoria;
+
 function showProdRel(array) { // funcion para mostrar los productos relacionados
     let contenido = "";
 
@@ -124,34 +124,47 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {//verifica el status de info
             if (resultObj.status === "ok") {
-                resultObj.data.forEach(product => {
-                    if (product.name == JSON.parse(localStorage.getItem('product-id')).productId) {
-                        producto = product;
+                resultObj.data.forEach(element => {
+                    if (element.category == JSON.parse(localStorage.getItem('category-id')).categoryId) {
+                        element.array.forEach(product => {
+                            if (product.name == JSON.parse(localStorage.getItem('product-id')).productId) {
+                                producto = product;
 
-                        let nameHTML = product.name;
-                        let descriptionHTML = product.description;
-                        let soldCountHTML = product.soldCount;
-                        let currencyHTML = product.currency;
-                        let costHTML = product.cost;
+                                let nameHTML = product.name;
+                                let descriptionHTML = product.description;
+                                let soldCountHTML = product.soldCount;
+                                let currencyHTML = product.currency;
+                                let costHTML = product.cost;
 
-                        document.getElementById("name").innerHTML = nameHTML;
-                        document.getElementById("Description").innerHTML = descriptionHTML;
-                        document.getElementById("Count").innerHTML = soldCountHTML;
-                        document.getElementById("Cost").innerHTML = currencyHTML;
-                        document.getElementById("Cost").innerHTML += " " + costHTML;
+                                document.getElementById("name").innerHTML = nameHTML;
+                                document.getElementById("Description").innerHTML = descriptionHTML;
+                                document.getElementById("Count").innerHTML = soldCountHTML;
+                                document.getElementById("Cost").innerHTML = currencyHTML;
+                                document.getElementById("Cost").innerHTML += " " + costHTML;
 
-                        showImages(producto.images);
+                                showImages(producto.images);
 
-                        producto.relatedProducts.forEach(rP => {//recorre los PR y del arreglo principal muestra los productos
-                            showProdRel(resultObj.data[rP - 1]);
+                                producto.relatedProducts.forEach(rP => {//recorre los PR y del arreglo principal muestra los productos
+                                    showProdRel(resultObj.data[rP - 1]);
+                                });
+
+                                comentarios.forEach(comentario => {//recorre los comentarios
+                                    showComentario(comentario);
+                                });
+                            }
                         });
 
-                        comentarios.forEach(comentario => {//recorre los comentarios
-                            showComentario(comentario);
-                        });
+
                     }
-
                 });
+                if (!localStorage.getItem('category-id')) {
+                    Swal.fire({
+                        title: 'Lo sentimos ha surgido un error.',
+                        html: '<a href="categories.html">Prueba con seleccionar una categoria primero aqui</a>',
+                        icon: 'error',
+                        confirmButtonText: 'Cerrar',
+                    });
+                }
             }
         });
     });
