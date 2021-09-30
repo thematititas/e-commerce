@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "name": "Chevrolet Onix Joy",
         "comentario": [
             {
                 "score": 3,
@@ -29,7 +29,7 @@
         ]
     },
     {
-        "id": 2,
+        "name": "Fiat Way",
         "comentario": [
             {
                 "score": 3,
@@ -58,7 +58,7 @@
         ]
     },
     {
-        "id": 3,
+        "name": "Suzuki Celerio",
         "comentario": [
             {
                 "score": 3,
@@ -81,7 +81,7 @@
         ]
     },
     {
-        "id": 4,
+        "name": "Peugeot 208",
         "comentario": [
             {
                 "score": 5,

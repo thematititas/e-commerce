@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(CATEGORY_INFO_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
             resultObj.data.forEach(element => {
-                if (element.id == JSON.parse(localStorage.getItem('category-id')).categoryId) {
+                if (element.name == JSON.parse(localStorage.getItem('category-id')).categoryId) {
 
                     category = element;
 

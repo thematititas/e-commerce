@@ -1,17 +1,17 @@
 var producto;
 var comentarios;
 var contador;
-
+var categoria;
 function showProdRel(array) { // funcion para mostrar los productos relacionados
     let contenido = "";
 
     contenido += `
     <div class="col-md-4">
-    <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-      <img class="bd-placeholder-img card-img-top"  src="`+array.images[0]+`">
-      <h4 class="m-3">`+array.name+`</h4>
+    <a href="product-info.html" onclick=ID(`+ array.id + `) class="card mb-4 shadow-sm custom-card">
+      <img class="bd-placeholder-img card-img-top"  src="`+ array.images[0] + `">
+      <h4 class="m-3">`+ array.name + `</h4>
       <div class="card-body">
-      <h6 class="card-subtitle mb-2 text-muted">`+array.currency+` `+array.cost+`</h6>
+      <h6 class="card-subtitle mb-2 text-muted">`+ array.currency + ` ` + array.cost + `</h6>
       </div>
     </a>
   </div>
@@ -73,7 +73,7 @@ function calificar(item) { //funcion para califacar estrellas en los comentarios
 }
 
 function ID(id) { //funcion para modificar el id del localStorage
-    localStorage.setItem('id', JSON.stringify({ productId: id }));
+    localStorage.setItem('product-id', JSON.stringify({ productId: id }));
 }
 
 function showComentario(coment) { //funcion para mostrar los comentarios
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (result) {//verificar el status de comentarios
         if (result.status === "ok") {
             result.data.forEach(coment => {
-                if (coment.id == JSON.parse(localStorage.getItem('id')).productId) {
+                if (coment.name == JSON.parse(localStorage.getItem('product-id')).productId) {
                     comentarios = coment.comentario;
                 }
             });
@@ -124,70 +124,80 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {//verifica el status de info
             if (resultObj.status === "ok") {
-                resultObj.data.forEach(product => {
-                    if (product.id == JSON.parse(localStorage.getItem('id')).productId) {
-                        producto = product;
+                resultObj.data.forEach(element => {
+                    if (element[0].category == JSON.parse(localStorage.getItem('category-id')).categoryId ||
+                        !(JSON.parse(localStorage.getItem('category-id')).categoryId)) {
 
-                        let nameHTML = product.name;
-                        let descriptionHTML = product.description;
-                        let soldCountHTML = product.soldCount;
-                        let currencyHTML = product.currency;
-                        let costHTML = product.cost;
 
-                        document.getElementById("name").innerHTML = nameHTML;
-                        document.getElementById("Description").innerHTML = descriptionHTML;
-                        document.getElementById("Count").innerHTML = soldCountHTML;
-                        document.getElementById("Cost").innerHTML = currencyHTML;
-                        document.getElementById("Cost").innerHTML += " " + costHTML;
 
-                        showImages(producto.images);
+                        element.forEach(product => {
 
-                        producto.relatedProducts.forEach(rP => {//recorre los PR y del arreglo principal muestra los productos
-                            showProdRel(resultObj.data[rP - 1]);
-                        });
+                            if (product.name == JSON.parse(localStorage.getItem('product-id')).productId) {
+                                producto = product;
 
-                        comentarios.forEach(comentario => {//recorre los comentarios
-                            showComentario(comentario);
+                                let nameHTML = product.name;
+                                let descriptionHTML = product.description;
+                                let soldCountHTML = product.soldCount;
+                                let currencyHTML = product.currency;
+                                let costHTML = product.cost;
+
+                                document.getElementById("name").innerHTML = nameHTML;
+                                document.getElementById("Description").innerHTML = descriptionHTML;
+                                document.getElementById("Count").innerHTML = soldCountHTML;
+                                document.getElementById("Cost").innerHTML = currencyHTML;
+                                document.getElementById("Cost").innerHTML += " " + costHTML;
+
+                                showImages(producto.images);
+
+                                producto.relatedProducts.forEach(rP => {//recorre los PR y del arreglo principal muestra los productos
+                                    showProdRel(resultObj.data[rP - 1]);
+                                });
+
+                                comentarios.forEach(comentario => {//recorre los comentarios
+                                    showComentario(comentario);
+                                });
+                            }
+                        
                         });
                     }
-                });
-            }
+            });
+    }
         });
     });
 
-    document.getElementById("boton").addEventListener("click", function () {
+document.getElementById("boton").addEventListener("click", function () {
 
-        if (localStorage.getItem('nameUsuario')) { // if estas logeado
-            if (document.getElementById("texto").value) { // if comentaste
-                if (contador) {// if calificaste
-                    showComentario(newObject(document.getElementById("texto").value));
-                    limpiar();
-                    Swal.fire({
-                        title: 'Gracias por tu comentario',
-                        icon: 'success',
-                        confirmButtonText: 'Cerrar',
-                    });
-                } else {// else no calificaste
-                    Swal.fire({
-                        title: 'Debe poner una calificación primero',
-                        icon: 'warning',
-                        confirmButtonText: 'Cerrar',
-                    });
-                }
-            } else {//no comentaste
+    if (localStorage.getItem('nameUsuario')) { // if estas logeado
+        if (document.getElementById("texto").value) { // if comentaste
+            if (contador) {// if calificaste
+                showComentario(newObject(document.getElementById("texto").value));
+                limpiar();
                 Swal.fire({
-                    title: 'Para publicar debe hacer algun comentario',
+                    title: 'Gracias por tu comentario',
+                    icon: 'success',
+                    confirmButtonText: 'Cerrar',
+                });
+            } else {// else no calificaste
+                Swal.fire({
+                    title: 'Debe poner una calificación primero',
                     icon: 'warning',
                     confirmButtonText: 'Cerrar',
                 });
-            };
-        } else {//no estas logeado
+            }
+        } else {//no comentaste
             Swal.fire({
-                title: 'Debes estar logeado para hacer un comentario.',
-                html: '<a href="index.html">Haz click aquí para logearte</a>',
-                icon: 'error',
+                title: 'Para publicar debe hacer algun comentario',
+                icon: 'warning',
                 confirmButtonText: 'Cerrar',
             });
-        }
-    });
+        };
+    } else {//no estas logeado
+        Swal.fire({
+            title: 'Debes estar logeado para hacer un comentario.',
+            html: '<a href="index.html">Haz click aquí para logearte</a>',
+            icon: 'error',
+            confirmButtonText: 'Cerrar',
+        });
+    }
+});
 });
