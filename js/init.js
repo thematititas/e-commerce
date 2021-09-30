@@ -43,12 +43,31 @@ var getJSONData = function (url) {
 function signOff() {
   localStorage.removeItem("nameUsuario");
 }
-
+function IDcate(id) { //funcion para modificar el id del localStorage
+  localStorage.setItem('category-id', JSON.stringify({ categoryId: id }));
+}
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes. 
 document.addEventListener("DOMContentLoaded", function (e) {
+  document.getElementById("urls").innerHTML += `
+  <div class="dropdown">
+  <a class="py-2 d-none d-md-inline-block" id="produ" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
+  <div class="dropdown-menu" aria-labelledby="produ">
+          <a class="dropdown-item" href="products.html" onclick="IDcate('Autos')">Autos</a>
+          <a class="dropdown-item" href="products.html" onclick="IDcate('Celulares')">Celulares</a>
+          <a class="dropdown-item" href="products.html" onclick="IDcate('Computadoras')">Computadoras</a>
+          <a class="dropdown-item" href="products.html" onclick="IDcate('Deporte')">Deporte</a>
+          <a class="dropdown-item" href="products.html" onclick="IDcate('Electrodométicos')">Electrodomésticos</a>
+          <a class="dropdown-item" href="products.html" onclick="IDcate('Herramientas')">Herramientas</a>
+          <a class="dropdown-item" href="products.html" onclick="IDcate('Jugutes')">Juguetes</a>
+          <a class="dropdown-item" href="products.html" onclick="IDcate('Muebles')">Muebles</a>
+          <a class="dropdown-item" href="products.html" onclick="IDcate('Vestimenta')">Vestimenta</a>
+        </div>
+      </div>
+  <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+  `;
   var usu = localStorage.getItem('nameUsuario');
   if (usu) {
     document.getElementById("urls").innerHTML += `

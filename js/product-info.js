@@ -7,7 +7,7 @@ function showProdRel(array) { // funcion para mostrar los productos relacionados
 
     contenido += `
     <div class="col-md-4">
-    <a href="product-info.html" onclick=ID(`+ array.id + `) class="card mb-4 shadow-sm custom-card">
+    <a href="product-info.html" onclick=IDprod(`+ array.id + `) class="card mb-4 shadow-sm custom-card">
       <img class="bd-placeholder-img card-img-top"  src="`+ array.images[0] + `">
       <h4 class="m-3">`+ array.name + `</h4>
       <div class="card-body">
@@ -72,7 +72,7 @@ function calificar(item) { //funcion para califacar estrellas en los comentarios
     }
 }
 
-function ID(id) { //funcion para modificar el id del localStorage
+function IDprod(id) { //funcion para modificar el id del localStorage
     localStorage.setItem('product-id', JSON.stringify({ productId: id }));
 }
 
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                                 showImages(producto.images);
 
                                 producto.relatedProducts.forEach(rP => {//recorre los PR y del arreglo principal muestra los productos
-                                    showProdRel(resultObj.data[rP - 1]);
+                                    showProdRel(element.array[rP]);
                                 });
 
                                 comentarios.forEach(comentario => {//recorre los comentarios

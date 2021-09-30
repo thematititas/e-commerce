@@ -16,7 +16,7 @@ function sortArray(Array) { //funcion para ordenar el filtrado
         Array.sort(function (a, b) { return b.soldCount - a.soldCount });
     }
 }
-function ID(id) {// funcion para modificar el ID del localStorage
+function IDprod(id) {// funcion para modificar el ID del localStorage
     localStorage.setItem('product-id', JSON.stringify({ productId: id }));
 }
 function showArray(Array) {// funcion para mostrar el arreglo
@@ -33,7 +33,7 @@ function showArray(Array) {// funcion para mostrar el arreglo
 
             if ((product.name.toLowerCase().includes(buscar.value.toLowerCase())) || (buscar.value === "")) {
                 contents += `
-        <a href="product-info.html" class="list-group-item list-group-item-action" onclick="ID('`+ product.name + `')">
+        <a href="product-info.html" class="list-group-item list-group-item-action" onclick="IDprod('`+ product.name + `')">
             <div class="row">
                 <div class="col-3">
                     <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">

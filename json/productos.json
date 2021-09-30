@@ -37,6 +37,104 @@
         ]
     },
     {
+        "category": "Herramientas",
+        "array": [
+            {
+                "name": "Sierra caladora",
+                "description": "Sierra caladora 400w.",
+                "cost": 40,
+                "currency": "USD",
+                "imgSrc": "img/Herramientas/prod1.jpg",
+                "soldCount": 40
+            },
+            {
+                "name": "Set de 6 destornilladores",
+                "description": "Set de 6 destornilladores de varios tamaños y alta calidad.",
+                "cost": 35,
+                "currency": "USD",
+                "imgSrc": "img/Herramientas/prod2.jpg",
+                "soldCount": 70
+            },
+            {
+                "name": "Llave para caños",
+                "description": "Llave para caños 14 marca INCCO.",
+                "cost": 17,
+                "currency": "USD",
+                "imgSrc": "img/Herramientas/prod3.jpg",
+                "soldCount": 30
+            },
+            {
+                "name": "Nivel resina",
+                "description": "Nivel resina de 12cm",
+                "cost": 11,
+                "currency": "USD",
+                "imgSrc": "img/Herramientas/prod4.jpg",
+                "soldCount": 82
+            },
+            {
+                "name": "Escuadra de carpintero chata",
+                "description": "Escuadra de carpintero chata Stanley de 12cm",
+                "cost": 10,
+                "currency": "USD",
+                "imgSrc": "img/Herramientas/prod5.jpg",
+                "soldCount": 130
+            },
+            {
+                "name": "Cinta métrica",
+                "description": "Cinta métrica de 3m",
+                "cost": 5,
+                "currency": "USD",
+                "imgSrc": "img/Herramientas/prod6.jpg",
+                "soldCount": 100
+            }
+        ]
+    },
+    {
+        "category": "Computadoras",
+        "array": [
+            {
+                "name": "NOTEBOOK APPLE MACBOOK",
+                "description": "MACBOOK AIR 2020, más ligera y delgada, vuelve completamente renovada por dentro. ",
+                "cost": 2089,
+                "currency": "USD",
+                "imgSrc": "img/Computadoras/prod1.jpg",
+                "soldCount": 190
+            },
+            {
+                "name": "NOTEBOOK HUAWEI MATEBOOK",
+                "description": "HUAWEI MateBook D 14 está equipado con una extraordinaria pantalla IPS de 1920 x 1080.",
+                "cost": 1439,
+                "currency": "USD",
+                "imgSrc": "img/Computadoras/prod2.jpg",
+                "soldCount": 54
+            },
+            {
+                "name": "NOTEBOOK GAMER MSI",
+                "description": "La notebook gamer MSI GF65 ofrece un rendimiento óptimo gracias al procesador Intel Core i7 de décima generación.",
+                "cost": 2115,
+                "currency": "USD",
+                "imgSrc": "img/Computadoras/prod3.jpg",
+                "soldCount": 300
+            },
+            {
+                "name": "NOTEBOOK GAMER HP",
+                "description": "Notebook HP Pavilion 16-A0051WM diseñado específicamente para juegos.",
+                "cost": 1499,
+                "currency": "USD",
+                "imgSrc": "img/Computadoras/prod4.jpg",
+                "soldCount": 150
+            },
+            {
+                "name": "NOTEBOOK HP SILVER RYZEN",
+                "description": "La notebook HP 14-DK1025wm ofrece un diseño elegante y delgado.",
+                "cost": 659,
+                "currency": "USD",
+                "imgSrc": "img/Computadoras/prod5.jpg",
+                "soldCount": 30
+            }
+        ]
+    },
+    {
         "category": "Muebles",
         "array": [
             {
@@ -70,6 +168,64 @@
                 "currency": "USD",
                 "imgSrc": "img/Autos/prod4.jpg",
                 "soldCount": 17
+            }
+        ]
+    },
+    {
+        "category": "Electrodomésticos",
+        "array": [
+            {
+                "name": "Heladera Samsung",
+                "description": "Heladera Samsung de gran tamaño y alta calidad, ideal para una familia de gran tamaño.",
+                "cost": 1699,
+                "currency": "USD",
+                "imgSrc": "img/Electrodomésticos/prod1.jpg",
+                "soldCount": 30
+            },
+            {
+                "name": "Smart TV Samsung 43 UHD 4K",
+                "description": "Lo ultimo en 4k, Smart TV Samsung de alta calidad.",
+                "cost": 559,
+                "currency": "USD",
+                "imgSrc": "img/Electrodomésticos/prod2.jpg",
+                "soldCount": 33
+            },
+            {
+                "name": "Microondas Smartlife",
+                "description": "Microondas Smartlife economico y practico.",
+                "cost": 129,
+                "currency": "USD",
+                "imgSrc": "img/Electrodomésticos/prod3.jpg",
+                "soldCount": 21
+            }
+        ]
+    },
+    {
+        "category": "Celulares",
+        "array": [
+            {
+                "name": "iPhone 13 PRO",
+                "description": "iPhone 13 Pro. El mayor avance en nuestro sistema de cámaras Pro hasta ahora.",
+                "cost": 1500,
+                "currency": "USD",
+                "imgSrc": "img/Celulares/prod1.jpg",
+                "soldCount": 42
+            },
+            {
+                "name": "Samsung S21",
+                "description": "Descubrí infinitas posibilidades para tus fotos con las 4 cámaras principales de tu equipo.",
+                "cost": 1600,
+                "currency": "USD",
+                "imgSrc": "img/Celulares/prod2.jpg",
+                "soldCount": 44
+            },
+            {
+                "name": "Huawei P Smart 2021",
+                "description": "reconocida por combinar un diseño elegante con innovaciones que satisfacen las necesidades de sus consumidores.",
+                "cost": 1450,
+                "currency": "USD",
+                "imgSrc": "img/Celulares/prod3.jpg",
+                "soldCount": 38
             }
         ]
     }
