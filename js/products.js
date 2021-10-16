@@ -6,7 +6,7 @@ var minPrice = undefined;
 var maxPrice = undefined;
 var condition = 1;
 var buscar;
-
+const $miCheckbox = document.querySelector("#Autos");
 function sortArray(Array) { //funcion para ordenar el filtrado
     if (condition === 1) {
         Array.sort(function (a, b) { return a.cost - b.cost });
@@ -64,7 +64,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
             result.data.forEach(product => {
                 if (product.category == JSON.parse(localStorage.getItem('category-id')).categoryId) {
                     productarray = product.array;
+                    document.querySelector("#Autos").checked = true;
                     showArray(productarray);
+                    
                 }
             });
         }
@@ -117,5 +119,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     document.getElementById("mytext").addEventListener('input', function () {
         showArray(productarray);
+    });
+    
+    document.getElementById("Autos").addEventListener('input', function () {
+        if(document.querySelector("#Autos").checked){
+        alert(1);
+        } else {
+            alert(2);
+        }
     });
 });

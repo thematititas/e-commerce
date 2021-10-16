@@ -130,11 +130,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
                             if (product.name == JSON.parse(localStorage.getItem('product-id')).productId) {
                                 producto = product;
 
-                                let nameHTML = product.name;
-                                let descriptionHTML = product.description;
-                                let soldCountHTML = product.soldCount;
-                                let currencyHTML = product.currency;
-                                let costHTML = product.cost;
+                                let nameHTML = producto.name;
+                                let descriptionHTML = producto.description;
+                                let soldCountHTML = producto.soldCount;
+                                let currencyHTML = producto.currency;
+                                let costHTML = producto.cost;
 
                                 document.getElementById("name").innerHTML = nameHTML;
                                 document.getElementById("Description").innerHTML = descriptionHTML;
@@ -169,6 +169,49 @@ document.addEventListener("DOMContentLoaded", function (e) {
         });
     });
 
+    document.getElementById("comprar").addEventListener("click", function () {
+        var getlocal = localStorage.getItem('carrito');
+        var cont = "";
+        var parslocal;
+        var bandera = false;
+        var precio = {
+            name: producto.name,
+            cost: producto.cost,
+            currency: producto.currency,
+            cantidad: 1
+        };
+
+        if (getlocal != null && getlocal != "" && getlocal != false && getlocal != undefined) {
+            parslocal = JSON.parse(getlocal);
+            var contador = 0;
+            parslocal.forEach(element => {
+                if (element.name == precio.name) {
+                    cont = contador;
+                    bandera = true;
+                }
+                contador++;
+            });
+
+            if (bandera) {
+                parslocal[cont].cantidad++;
+            } else {
+                parslocal[parslocal.length] = precio;
+            }
+            localStorage.setItem("carrito", JSON.stringify(parslocal));
+        } else {
+            parslocal = new Array();
+            parslocal[0] = precio;
+            localStorage.setItem("carrito", JSON.stringify(parslocal));
+        }
+
+        //alerta de compra
+        Swal.fire({
+            title: 'El producto a sido añadido al su carrito',
+            icon: 'success',
+            html: '<a href="cart.html">Haz click aquí para ir a su carrito</a>',
+            confirmButtonText: 'Seguir comprando',
+        });
+    });
     document.getElementById("boton").addEventListener("click", function () {
 
         if (localStorage.getItem('nameUsuario')) { // if estas logeado
