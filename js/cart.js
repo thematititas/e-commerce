@@ -51,9 +51,9 @@ function showArray(productos) {
                 <td scope="col">
                 <button onclick="aumentar(${contador},${monto})"class="btn btn-info btn-sm">    +   </button>
                 <button onclick="restar(${contador},${monto})" class="btn btn-danger btn-sm">    -  </button>
-                <td scope="col">$ ${monto}</td>
+                <td scope="col">$ ${product.currency} ${product.unitCost}</td>
                 </td>
-                <td scope="col"> $ <span id="precio${contador}" > ${precio}</span></td>
+                <td scope="col"> $ <span id="precio${contador}" > UYU ${precio}</span></td>
             </tr>`
             document.getElementById("items").innerHTML += content;
     }
@@ -64,7 +64,7 @@ function showArray(productos) {
             <td scope="col" id="cantidadTotal">${cantTotal}</td>          
             <td scope="col"><button class="btn btn-danger btn-sm" onclick="vaciarCarrito()" id="vaciar-carrito"> vaciar todo </button></td>
             <th scope="col">Precio total</th>
-            <td scope="col" > $ <span id="total"> ${total}</span></td>
+            <td scope="col" > $ <span id="total"> UYU ${total}</span></td>
         </tr>`
         document.getElementById("totalProductos").innerHTML = content2;
 

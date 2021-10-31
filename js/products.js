@@ -33,23 +33,22 @@ function showArray(Array) {// funcion para mostrar el arreglo
 
             if ((product.name.toLowerCase().includes(buscar.value.toLowerCase())) || (buscar.value === "")) {
                 contents += `
-        <a href="product-info.html" class="list-group-item list-group-item-action" onclick="IDprod('`+ product.name + `')">
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ product.name + `</h4>
-                        <small class="text-muted">` + product.soldCount + ` artículos vendidos</small>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card mb-3">
+                            <a href="product-info.html" class="card shadow-sm custom-card" onclick="IDprod('`+ product.name + `')">
+                                <img src="` + product.imgSrc + `" alt="` + product.description + `" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">`+ product.name + `</h5>
+                                        <small class="text-muted">` + product.soldCount + ` artículos vendidos</small>
+                                        <p class="card-text">` + product.description + `<p class="card-text">    
+                                    </div>
+                                    <div class="card-footer">
+                                        <h5 class="card-text text-center">` + product.currency + "  " + product.cost + `</h5>
+                                    </div>
+                            </a>
+                        </div>
                     </div>
-                    <p class="mb-1">` + product.description + `</p> 
-                    <br>
-                    <h5 class="mb-1">` + product.currency + "  " + product.cost + `</h5>
-                </div>  
-            </div>
-        </a>
-        `
+                `
             }
         }
 

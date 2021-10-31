@@ -27,6 +27,36 @@
         font-size: 3.5rem;
       }
     }
+
+    .header {
+      text-align: center;
+      height: 300px;
+      padding: 12px;
+
+    }
+
+    .avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+    }
+
+    .user {
+      font-size: 18px;
+      margin-top: 14px;
+    }
+
+    .encabezado{
+      margin-top: 8px;
+      padding: 3px;
+    }
+
+    .formulario{
+      border: black 2px solid;
+      padding: 4px;
+      border-radius: 20px;
+      background-color: ghostwhite;
+    }
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -40,39 +70,128 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+
+  <div class="text-center p-4">
+    <h2>Mi perfil</h2>
   </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+
+  <div class="container p-2">
+
+    <div class="row">
+      <!--imagen -->
+      <div class="col-md">
+        <div class="header"><img class="avatar" id="marco" src="img/sinfoto.jpg">
+          <br><br>
+          <h3 id="pieDeFoto"></h3>
+        </div>
+
+      </div>
+
+      <!--formulario-->
+      <div class="col-md formulario">
+
+        <div class="encabezado">
+          <div class="row">
+            <div class="col-8 text-center"><h5>Datos de Usuario:</h5> </div>           
+            <div class="col-4 text-center">
+              <button type="button" class="btn btn-outline-success btn-sm" id="editar"><img src="img/editar.png" alt=""
+                  style="width:15px;"> Editar</button>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <form>
+          <div class="form-group row">
+            <label for="nombre" class="col-3 col-form-label">Nombre:</label>
+            <div class="col-9">
+              <input type="text" readonly class="form-control-plaintext" id="nombre" value="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="edad" class="col-3 col-form-label">Edad:</label>
+            <div class="col-9">
+              <input type="number" readonly class="form-control-plaintext" id="edad" value="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="email" class="col-3 col-form-label">Email:</label>
+            <div class="col-9">
+              <input type="email" readonly class="form-control-plaintext" id="email" value="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="telefono" class="col-3  col-form-label">Teléfono:</label>
+            <div class="col-9">
+              <input type="number" readonly class="form-control-plaintext" id="telefono" value="">
+            </div>
+          </div>
+          <div id="desplegable" class="d-none">
+            <div class="row">
+              <div class="col-3">
+              <span>Foto de usuario:</span></div>
+              <div class="col-8">
+              <input type="file" class="custom-file-input" id="foto">
+              <label for="foto" class=" custom-file-label">Elegir</label>
+            </div></div>
+            <br>
+            <div style="text-align: right;">
+            <button type="button" class="btn btn-outline-secondary" id="botonCancel">Cancel</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" id="botonModal" data-target="#exampleModal">
+              Guardar
+            </button>
+          </div>
+          </div>
+        </form>
+      </div>
+
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Confirmar Datos</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" id="confirmar">Guardar cambios</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+
+    <footer class="text-muted bg-light">
+      <div class="container">
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      </div>
+    </footer>
+    <div class="alert fade alert-success" role="alert" id="alertResult">
+      <span id="resultSpan"></span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/my-profile.js"></script>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/my-profile.js"></script>
 </body>
 
 </html>
