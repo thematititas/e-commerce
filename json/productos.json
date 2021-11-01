@@ -52,7 +52,7 @@
                 "description": "¡La magia de StoriKid ahora en formato bolsillo!.",
                 "cost": 6900,
                 "currency": "UYU",
-                "imgSrc": "img/Muebles/prod2.jpg",
+                "imgSrc": "img/Juguetes/prod2.jpg",
                 "soldCount": 74
             },
             {
@@ -60,7 +60,7 @@
                 "description": "¡La muñeca Barbie siempre está en la lista de las mejor vestidas!.",
                 "cost": 689,
                 "currency": "UYU",
-                "imgSrc": "img/Muebles/prod3.jpg",
+                "imgSrc": "img/Juguetes/prod3.jpg",
                 "soldCount": 178
             }
         ]

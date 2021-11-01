@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
           <a class="dropdown-item" href="products.html" onclick="IDcate('Deporte')">Deporte</a>
           <a class="dropdown-item" href="products.html" onclick="IDcate('Electrodomésticos')">Electrodomésticos</a>
           <a class="dropdown-item" href="products.html" onclick="IDcate('Herramientas')">Herramientas</a>
-          <a class="dropdown-item" href="products.html" onclick="IDcate('Jugutes')">Juguetes</a>
+          <a class="dropdown-item" href="products.html" onclick="IDcate('Juguetes')">Juguetes</a>
           <a class="dropdown-item" href="products.html" onclick="IDcate('Muebles')">Muebles</a>
           <a class="dropdown-item" href="products.html" onclick="IDcate('Vestimenta')">Vestimenta</a>
         </div>

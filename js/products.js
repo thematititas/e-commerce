@@ -63,7 +63,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
             result.data.forEach(product => {
                 if (product.category == JSON.parse(localStorage.getItem('category-id')).categoryId) {
                     productarray = product.array;
-                    document.querySelector("#Autos").checked = true;
+                    algo = JSON.parse(localStorage.getItem('category-id')).categoryId
+                    document.querySelector(`#${algo}`).checked = true;
                     showArray(productarray);
                     
                 }
