@@ -73,6 +73,129 @@
         ]
     },
     {
+        "category": "Juguetes",
+        "array": [
+            {
+                "name": "Hot Wheels Autito Básico",
+                "description": "Autos coleccionables HotWheels.",
+                "cost": 189,
+                "currency": "UYU",
+                "soldCount": 102,
+                "images": [
+                    "img/Juguetes/prod1.jpg",
+                    "img/Juguetes/prod1_1.jpg",
+                    "img/Juguetes/prod1_2.jpg",
+                    "img/Juguetes/prod1_3.jpg"
+                ],
+                "relatedProducts": [
+                    1,
+                    2
+                ]
+            },
+            {
+                "name": "Storikid Pocket - Vtech",
+                "description":"¡La magia de StoriKid ahora en formato bolsillo!Cuentacuentos para llevar donde quieras. Con un formato muy compacto y fácil de manejar, StoriKid Pocket es un compañero ideal para los niños. Encontrarán cuentos, canciones, poemas, nanas, historias para dormir, chistes y datos curiosos.",
+                "cost": 6900,
+                "currency": "UYU",
+                "soldCount": 74,
+                "images": [
+                    "img/Juguetes/prod2.jpg",
+                    "img/Juguetes/prod2_1.jpg"
+                ],
+                "relatedProducts": [
+                    0,
+                    2
+                ]
+            },
+            {
+                "name": "Barbie Muñeca Glitz",
+                "description": "¡La muñeca Barbie siempre está en la lista de las mejor vestidas!.",
+                "cost": 689,
+                "currency": "UYU",
+                "soldCount": 178,
+                "images": [
+                    "img/Juguetes/prod3.jpg",
+                    "img/Juguetes/prod3_1.jpg",
+                    "img/Juguetes/prod3_2.jpg",
+                    "img/Juguetes/prod3_3.jpg",
+                    "img/Juguetes/prod3_4.jpg"
+                ],
+                "relatedProducts": [
+                    0,
+                    1
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Muebles",
+        "array": [
+            {
+                "name": "JUEGO DE LIVING LUARES 3+2",
+                "description": "La madera de este sofá proviene de zonas de Eucalipto reforestadas, generando un menor impacto ecológico.La calidad de los elementos interiores, como las correas, permiten una mayor flexibilidad del sofá, aumentando sustancialmente su confort. La espuma del sofá aporta la blandura y resistencia necesarias que mejoran la durabilidad de un producto pensado para hacerte sentir lo más cómodo posible.",
+                "cost": 41500,
+                "currency": "UYU",
+                "soldCount": 25,
+                "images": [
+                    "img/Muebles/prod1.jpg",
+                    "img/Muebles/prod1_1.jpg",
+                    "img/Muebles/prod1_2.jpg",
+                    "img/Muebles/prod1_3.jpg"
+                ],
+                "relatedProducts": [
+                    2,
+                    4
+                ]
+            },
+            {
+                "name": "Armario Multiuso",
+                "description": "Cómodo y elegante armario de 2 puertas con 5 estantes.",
+                "cost": 1890,
+                "currency": "UYU",
+                "soldCount": 52,
+                "images": [
+                    "img/Muebles/prod2.jpg"
+                ],
+                "relatedProducts": [
+                    1,
+                    3
+                ]
+            },
+            {
+                "name": "Cucheta Reforzada Madera Maciza",
+                "description": "Cucheta de madera.",
+                "cost": 9900,
+                "currency": "UYU",
+                "soldCount": 23,
+                "images": [
+                    "img/Muebles/prod3.jpg",
+                    "img/Muebles/prod3_1.jpg"
+                ],
+                "relatedProducts": [
+                    1,
+                    4
+                ]
+            },
+            {
+                "name": "Poltrona Louis XV Tela Crema",
+                "description": "Estructura maciza de roble patinado y respaldo doble tapizado en lino natural.Almohadones con fundas desmontables tapizadas en lino.",
+                "cost": 29990,
+                "currency": "UYU",
+                "soldCount": 57,
+                "images": [
+                    "img/Muebles/prod4.jpg",
+                    "img/Muebles/prod4_1.jpg",
+                    "img/Muebles/prod4_2.jpg",
+                    "img/Muebles/prod4_3.jpg"
+                ],
+                "relatedProducts": [
+                    2,
+                    3
+                ]
+            }
+        ]
+    },
+    {
         "category": "Herramientas",
         "array": [
             {
@@ -183,9 +306,9 @@
                 "currency": "USD",
                 "soldCount": 190,
                 "images": [
-                    "img/Computadoras/prod1.jpg",
-                    "img/Computadoras/prod1_1.jpg",
-                    "img/Computadoras/prod1_2.jpg"
+                    "img/Computadoras/prod1.png",
+                    "img/Computadoras/prod1_1.png",
+                    "img/Computadoras/prod1_2.png"
                 ],
                 "relatedProducts": [
                     1,
@@ -199,8 +322,8 @@
                 "currency": "USD",
                 "soldCount": 54,
                 "images": [
-                    "img/Computadoras/prod2.jpg",
-                    "img/Computadoras/prod2_1.jpg"
+                    "img/Computadoras/prod2.png",
+                    "img/Computadoras/prod2_1.png"
                 ],
                 "relatedProducts": [
                     1,
@@ -214,9 +337,9 @@
                 "currency": "USD",
                 "soldCount": 300,
                 "images": [
-                    "img/Computadoras/prod3.jpg",
-                    "img/Computadoras/prod3_1.jpg",
-                    "img/Computadoras/prod3_2.jpg"
+                    "img/Computadoras/prod3.png",
+                    "img/Computadoras/prod3_1.png",
+                    "img/Computadoras/prod3_2.png"
                 ],
                 "relatedProducts": [
                     1,
@@ -230,8 +353,8 @@
                 "currency": "USD",
                 "soldCount": 150,
                 "images": [
-                    "img/Computadoras/prod4.jpg",
-                    "img/Computadoras/prod4_1.jpg"
+                    "img/Computadoras/prod4.png",
+                    "img/Computadoras/prod4_1.png"
                 ],
                 "relatedProducts": [
                     2,
@@ -245,8 +368,8 @@
                 "currency": "USD",
                 "soldCount": 30,
                 "images": [
-                    "img/Computadoras/prod5.jpg",
-                    "img/Computadoras/prod5_1.jpg"
+                    "img/Computadoras/prod5.png",
+                    "img/Computadoras/prod5_1.png"
                 ],
                 "relatedProducts": [
                     0,
@@ -256,74 +379,88 @@
         ]
     },
     {
-        "category": "Muebles",
+        "category": "Vestimenta",
         "array": [
             {
-                "name": "Chevrolet Onix Joy",
-                "description": "Potenciá tu actitud con Onix Joy que, además de destacarse por su diseño juvenil y moderno, te ofrecé una óptima autonomía, un desempeño equilibrado y el máximo confort interior. \u003cbr\u003eYa sea un viaje largo o un simple paseo por la ciudad, el confort es uno de los puntos fuertes del Onix. Esta versión incluye aire acondicionado, asientos tapizados en tela y gran espacio interior que te garantiza el máximo confort.",
-                "cost": 13500,
-                "currency": "USD",
-                "soldCount": 14,
+                "name": "TOP ERNESTINA - Verde Grisáceo",
+                "description": "Top holgado con escote redondo y de manga corta. Detalle de fruncido en el hombro de la manga creando efecto de volumen. Tela con textura.",
+                "cost": 790,
+                "currency": "UYU",
+                "soldCount": 100,
                 "images": [
-                    "img/Autos/prod1.jpg",
-                    "img/Autos/prod1_1.jpg",
-                    "img/Autos/prod1_2.jpg",
-                    "img/Autos/prod1_3.jpg",
-                    "img/Autos/prod1_4.jpg"
-                ],
-                "relatedProducts": [
-                    2,
-                    4
-                ]
-            },
-            {
-                "name": "Fiat Way",
-                "description": "Es un vehículo osado y singular en sus conceptos y sus líneas. Desde su llegada sorprendió por su diseño y funcionalidades. A su vez, sus molduras en las puertas y sus fenders le aportan robustez a su diseño sin quitarle elegancia. Mientras tanto, sus rieles portaequipaje en el techo le otorgan un look más agresivo con personalidad off road. Way está listo para recorrer cualquier camino.",
-                "cost": 14500,
-                "currency": "USD",
-                "soldCount": 52,
-                "images": [
-                    "img/Autos/prod2.jpg",
-                    "img/Autos/prod2_1.jpg",
-                    "img/Autos/prod2_2.jpg"
+                    "img/Vestimenta/prod1.jpg",
+                    "img/Vestimenta/prod1_1.jpg",
+                    "img/Vestimenta/prod1_2.jpg"
                 ],
                 "relatedProducts": [
                     1,
-                    3
+                    2
                 ]
             },
             {
-                "name": "Suzuki Celerio",
-                "description": "Entra en el espíritu de Suzuki Celerio y experimenta la sensación de libertad cada vez que estás detrás del volante. Vive nuevas experiencias arriba de un auto que lo tiene todo: eficiencia de combustible, diseño y comodidad. Si buscas entretenimiento sin sacrificar rendimiento, Celerio es para ti.",
-                "cost": 12500,
-                "currency": "USD",
-                "soldCount": 25,
+                "name": "VESTIDO MALENA - Azul Marino",
+                "description": "Vestido corto, de escote en V con mangas cortas abullonadas. Diseño con cortes en la prenda que generan volumen en la misma.",
+                "cost": 1290,
+                "currency": "UYU",
+                "soldCount": 129,
                 "images": [
-                    "img/Autos/prod3.jpg",
-                    "img/Autos/prod3_1.jpg",
-                    "img/Autos/prod3_2.jpg",
-                    "img/Autos/prod3_3.jpg"
-                ],
-                "relatedProducts": [
-                    1,
-                    4
-                ]
-            },
-            {
-                "name": "Peugeot 208",
-                "description": "Con un diseño con proporciones exactas que generan un vehículo dinámico y bien equilibrado, inspirado en el concept Fractal.\u003cbr\u003eEl diseño delantero del vehículo adopta la nueva firma lumínica asemejándose a los colmillos de un león mientras que el nombre del modelo nuevamente está colocado en el frente con un diseño gráfico nuevo y moderno. También el logo del león se colocó en posición vertical sobre la grilla frontal.\u003cbr\u003eLa vista lateral resalta el aspecto dinámico del vehículo a través del trabajo realizado equilibrando luces y sombras que destacan al nuevo Peugeot 208.",
-                "cost": 15200,
-                "currency": "USD",
-                "soldCount": 17,
-                "images": [
-                    "img/Autos/prod4.jpg",
-                    "img/Autos/prod4_1.jpg",
-                    "img/Autos/prod4_2.jpg",
-                    "img/Autos/prod4_3.jpg"
+                    "img/Vestimenta/prod2.jpg",
+                    "img/Vestimenta/prod2_1.jpg",
+                    "img/Vestimenta/prod2_2.jpg",
+                    "img/Vestimenta/prod2_3.jpg"
                 ],
                 "relatedProducts": [
                     2,
                     3
+                ]
+            },
+            {
+                "name": "REMERA VIVANCO - Negro",
+                "description": "Remera de manga corta con fruncido en el centro de la misma. Cuello a la base y tela con textura.",
+                "cost": 790,
+                "currency": "UYU",
+                "soldCount": 150,
+                "images": [
+                    "img/Vestimenta/prod3.jpg",
+                    "img/Vestimenta/prod3_1.jpg",
+                    "img/Vestimenta/prod3_2.jpg"
+                ],
+                "relatedProducts": [
+                    3,
+                    4
+                ]
+            },
+            {
+                "name": "REMERA LUCCA - Blanco",
+                "description": "Remera manga 3/4 con cuello polo y escote en V. Tela con textura.",
+                "cost": 890,
+                "currency": "UYU",
+                "soldCount": 250,
+                "images": [
+                    "img/Vestimenta/prod4.jpg",
+                    "img/Vestimenta/prod4_1.jpg",
+                    "img/Vestimenta/prod4_2.jpg"
+                ],
+                "relatedProducts": [
+                    4,
+                    0
+                ]
+            },
+            {
+                "name": "TOP ACACIA - AMARILLO PASTEL",
+                "description": "Top de tejido de punto de bretel fino y escote recto. Opción ideal para armar el twin set con el cardigan Mónaco.",
+                "cost": 990,
+                "currency": "UYU",
+                "soldCount": 212,
+                "images": [
+                    "img/Vestimenta/prod5.jpg",
+                    "img/Vestimenta/prod5_1.jpg",
+                    "img/Vestimenta/prod5_2.jpg",
+                    "img/Vestimenta/prod5_3.jpg"
+                ],
+                "relatedProducts": [
+                    0,
+                    1
                 ]
             }
         ]
@@ -384,6 +521,75 @@
         ]
     },
     {
+        "category": "Deporte",
+        "array": [
+            {
+                "name": "Zapatilla Mountain Bike",
+                "description": "CON 3 VELCROS. TALLES 35 AL 47. CON TRABA",
+                "cost": 3790,
+                "currency": "UYU",
+                "soldCount": 150,
+                "images": [
+                    "img/Deporte/prod1.jpg",
+                    "img/Deporte/prod1_1.jpg",
+                    "img/Deporte/prod1_2.jpg",
+                    "img/Deporte/prod1_3.jpg",
+                    "img/Deporte/prod1_4.jpg"
+                ],
+                "relatedProducts": [
+                    1,
+                    3
+                ]
+            },
+            {
+                "name": "Pelota Basket Goma",
+                "description": "Medida N°3.",
+                "cost": 150,
+                "currency": "UYU",
+                "soldCount": 200,
+                "images": [
+                    "img/Deporte/prod2.jpg"
+                ],
+                "relatedProducts": [
+                    0,
+                    2
+                ]
+            },
+            {
+                "name": "Guante Arquero Adulto",
+                "description": "Talles S al XL.",
+                "cost": 30,
+                "currency": "USD",
+                "soldCount": 70,
+                "images": [
+                    "img/Deporte/prod3.jpg",
+                    "img/Deporte/prod3_1.jpg",
+                    "img/Deporte/prod3_2.jpg"
+                ],
+                "relatedProducts": [
+                    0,
+                    1
+                ]
+            },
+            {
+                "name": "Gorra de silicona de pescadito",
+                "description": "Gorra para natacion de pescadito",
+                "cost": 10,
+                "currency": "USD",
+                "soldCount": 154,
+                "images": [
+                    "img/Deporte/prod4.jpg",
+                    "img/Deporte/prod4_1.jpg",
+                    "img/Deporte/prod4_2.jpg"
+                ],
+                "relatedProducts": [
+                    1,
+                    2
+                ]
+            }
+        ]
+    },
+    {
         "category": "Celulares",
         "array": [
             {
@@ -410,7 +616,7 @@
                 "currency": "USD",
                 "soldCount": 44,
                 "images": [
-                    "img/Celulares/prod2.jpg",
+                    "img/Celulares/prod2.png",
                     "img/Celulares/prod2_1.jpg",
                     "img/Celulares/prod2_2.jpg",
                     "img/Celulares/prod2_3.jpg"
