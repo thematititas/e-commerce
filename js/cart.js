@@ -10,6 +10,7 @@ function aumentar(cant, pre) {
 }
 function restar(cant, pre) {
     let cantPro = parseInt(document.getElementById(`producto${cant}`).innerText);
+    if(cantPro != 0){
     document.getElementById(`producto${cant}`).innerHTML = cantPro - 1;
     let precio = parseInt(document.getElementById(`precio${cant}`).innerText);
     document.getElementById(`precio${cant}`).innerHTML = precio - pre;
@@ -17,7 +18,9 @@ function restar(cant, pre) {
     document.getElementById('cantidadTotal').innerHTML = cantTotal - 1;
     let total = parseInt(document.getElementById('total').innerText);
     document.getElementById('total').innerHTML = total - pre;
+    }
 }
+
 
 function showCuotas(){
     let precio = parseInt(document.getElementById('total').innerText);
@@ -27,6 +30,16 @@ function showCuotas(){
     document.getElementById('cuotas').innerHTML = content;
 }
 
+function eliminar(cant){
+    let cantPro = parseInt(document.getElementById(`producto${cant}`).innerText);
+    let precio = parseInt(document.getElementById(`precio${cant}`).innerText);
+    let cantTotal = parseInt(document.getElementById('cantidadTotal').innerText);
+    document.getElementById('cantidadTotal').innerHTML = cantTotal - cantPro;
+    let total = parseInt(document.getElementById('total').innerText);
+    document.getElementById('total').innerHTML = total - precio;
+
+    document.getElementById(`tr${cant}`).innerHTML = "";
+}
 
 function showArray(productos) {
 
@@ -43,17 +56,19 @@ function showArray(productos) {
         let precio = monto * product.count;
         cantTotal += product.count;
         total += precio;
-        let content = `<tr> 
+        let content = `<tr id="tr${contador}"> 
                 <th scope="col">${contador}</th>
                 <td scope="col"><img style="width:40px;height:40px;"  src="${product.src}"></td>
                 <td scope="col">${product.name}</td>
                 <td scope="col" id="producto${contador}">${product.count}</td>
                 <td scope="col">
                 <button onclick="aumentar(${contador},${monto})"class="btn btn-info btn-sm">    +   </button>
-                <button onclick="restar(${contador},${monto})" class="btn btn-danger btn-sm">    -  </button>
+                <button onclick="restar(${contador},${monto})" class="btn btn-danger btn-sm">    -  </button></td>
                 <td scope="col">$ ${product.currency} ${product.unitCost}</td>
                 </td>
-                <td scope="col"> $ <span id="precio${contador}" > UYU ${precio}</span></td>
+                <td scope="col"> $  UYU <span id="precio${contador}">${precio}</span></td>
+                <td scope="col">
+                <button onclick="eliminar(${contador})" class="btn btn-danger btn-sm"> x  </button></td>
             </tr>`
             document.getElementById("items").innerHTML += content;
     }
@@ -64,7 +79,7 @@ function showArray(productos) {
             <td scope="col" id="cantidadTotal">${cantTotal}</td>          
             <td scope="col"><button class="btn btn-danger btn-sm" onclick="vaciarCarrito()" id="vaciar-carrito"> vaciar todo </button></td>
             <th scope="col">Precio total</th>
-            <td scope="col" > $ <span id="total"> UYU ${total}</span></td>
+            <td scope="col" > $ UYU <span id="total">${total}</span></td>
         </tr>`
         document.getElementById("totalProductos").innerHTML = content2;
 

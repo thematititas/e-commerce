@@ -97,7 +97,7 @@
                 "description": "MACBOOK AIR 2020, más ligera y delgada, vuelve completamente renovada por dentro. ",
                 "cost": 2089,
                 "currency": "USD",
-                "imgSrc": "img/Computadoras/prod1.jpg",
+                "imgSrc": "img/Computadoras/prod1.png",
                 "soldCount": 190
             },
             {
@@ -105,7 +105,7 @@
                 "description": "HUAWEI MateBook D 14 está equipado con una extraordinaria pantalla IPS de 1920 x 1080.",
                 "cost": 1439,
                 "currency": "USD",
-                "imgSrc": "img/Computadoras/prod2.jpg",
+                "imgSrc": "img/Computadoras/prod2.png",
                 "soldCount": 54
             },
             {
@@ -113,7 +113,7 @@
                 "description": "La notebook gamer MSI GF65 ofrece un rendimiento óptimo gracias al procesador Intel Core i7 de décima generación.",
                 "cost": 2115,
                 "currency": "USD",
-                "imgSrc": "img/Computadoras/prod3.jpg",
+                "imgSrc": "img/Computadoras/prod3.png",
                 "soldCount": 300
             },
             {
@@ -121,7 +121,7 @@
                 "description": "Notebook HP Pavilion 16-A0051WM diseñado específicamente para juegos.",
                 "cost": 1499,
                 "currency": "USD",
-                "imgSrc": "img/Computadoras/prod4.jpg",
+                "imgSrc": "img/Computadoras/prod4.png",
                 "soldCount": 150
             },
             {
@@ -129,7 +129,7 @@
                 "description": "La notebook HP 14-DK1025wm ofrece un diseño elegante y delgado.",
                 "cost": 659,
                 "currency": "USD",
-                "imgSrc": "img/Computadoras/prod5.jpg",
+                "imgSrc": "img/Computadoras/prod5.png",
                 "soldCount": 30
             }
         ]
