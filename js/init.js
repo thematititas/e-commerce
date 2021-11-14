@@ -51,10 +51,10 @@ function IDcate(id) { //funcion para modificar el id del localStorage
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes. 
 document.addEventListener("DOMContentLoaded", function (e) {
-  document.getElementById("urls").innerHTML += `
-  <div class="dropdown">
-  <a class="py-2 d-none d-md-inline-block" id="produ" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
-  <div class="dropdown-menu" aria-labelledby="produ">
+  let content = `
+      <div class="dropdown">
+          <a class="py-2 d-inline-block" id="produ" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
+          <div class="dropdown-menu" aria-labelledby="produ">
           <a class="dropdown-item" href="products.html" onclick="IDcate('Autos')">Autos</a>
           <a class="dropdown-item" href="products.html" onclick="IDcate('Celulares')">Celulares</a>
           <a class="dropdown-item" href="products.html" onclick="IDcate('Computadoras')">Computadoras</a>
@@ -66,21 +66,24 @@ document.addEventListener("DOMContentLoaded", function (e) {
           <a class="dropdown-item" href="products.html" onclick="IDcate('Vestimenta')">Vestimenta</a>
         </div>
       </div>
-  <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+  <a class="py-2 d-inline-block" href="sell.html">Vender</a>
   `;
   var usu = localStorage.getItem('nameUsuario');
   if (usu) {
-    document.getElementById("urls").innerHTML += `
-      <div class="dropdown">
-        <a class="py-2 d-none d-md-inline-block" id="usuario" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">` + usu + `</a>
-        <div class="dropdown-menu" aria-labelledby="usuario">
-          <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
-          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-          <a class="dropdown-item" href="index.html" onclick="signOff()">Cerrar sesión</a>
+    content += `
+      <div class="dropdown ">
+        <a class="py-2 d-inline-block" id="usuario" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">`+usu  +`</a>
+        <div class="dropdown-menu  dropdown-menu-right" aria-labelledby="usuario">
+          <li><a class="dropdown-item" href="cart.html">Ver mi carrito</a></li>
+          <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+          <li><a class="dropdown-item" href="index.html" onclick="signOff()">Cerrar sesión</a></li>
         </div>
       </div>
     `
+    
   };
+  document.getElementById("urls").innerHTML += content;
+    document.getElementById("urls2").innerHTML +=content;
 });
 
 

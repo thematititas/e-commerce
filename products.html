@@ -16,12 +16,20 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
+  <nav class="site-header sticky-top py-1 bg-dark d-none d-md-block">
     <div id="urls" class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="principal.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
     </div>
   </nav>
+  <nav class="site-header py-1 bg-dark d-block d-md-none">
+    <div id="urls2" class="container d-flex flex-row justify-content-between">
+      <a class="py-2 d-inline-block" href="principal.html">Inicio</a>
+      <a class="py-2 d-inline-block" href="categories.html">Categorías</a>
+    </div>
+  </nav>
+ 
+
   <main role="main" class="pb-5">
     <div class="text-center p-4">
       <h2>Productos</h2>
@@ -46,24 +54,23 @@
       </div>
       <div class="container">
         <div class="row justify-content-end">
-          <div class="col-md-6"> </div>
           <div class="row container p-0 m-0">
-            <div class="col">
+            <div class="col-2 col-md-1">
               <p class="font-weight-normal text-right my-2">Buscar:</p>
             </div>
-            <div class="col">
+            <div class="col-10 col-md">
               <input type="search" placeholder="Busqueda:" class="form-control" id="mytext">
             </div>
-            <div class="col">
+            <div class="col-2 col-md-1">
               <p class="font-weight-normal text-right my-2">Precio:</p>
             </div>
-            <div class="col">
+            <div class="col-5 col-md">
               <input class="form-control" type="number" placeholder="min." id="rangeFilterPriceMin" min="0">
             </div>
-            <div class="col">
+            <div class="col-5 col-md">
               <input class="form-control" type="number" placeholder="máx." id="rangeFilterPriceMax" min="0">
             </div>
-            <div class="col-3 p-0">
+            <div class="col p-0">
               <div class="btn-group" role="group">
                 <button class="btn btn-light btn-block" id="rangeFilterPrice">Filtrar</button>
                 <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
@@ -73,63 +80,6 @@
         </div>
       </div>
       <div>
-        <div class="row">
-          
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="Autos" >
-          <label class="form-check-label" for="Autos">
-            Autos
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="Celulares" >
-          <label class="form-check-label" for="Celulares">
-            Celulares
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="computadorasChecked" >
-          <label class="form-check-label" for="computadorasChecked">
-            Computadoras
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="deporteChecked" >
-          <label class="form-check-label" for="deporteChecked">
-            Deporte
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="electrodomésticosChecked" >
-          <label class="form-check-label" for="electrodomésticosChecked">
-            Electrodomésticos
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="herramientasChecked" >
-          <label class="form-check-label" for="herramientasChecked">
-            Herramientas
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="juguetesChecked" >
-          <label class="form-check-label" for="juguetesChecked">
-            Juguetes
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="mueblesChecked" >
-          <label class="form-check-label" for="mueblesChecked">
-            Muebles
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="vestimentaChecked" >
-          <label class="form-check-label" for="vestimentaChecked">
-            Vestimenta
-          </label>
-        </div>
-      </div>
         <br>
         <div class="row">
           <div class="card-group" id="cat-list-container">

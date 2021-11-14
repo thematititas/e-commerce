@@ -176,9 +176,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
         var bandera = false;
         var precio = {
             name: producto.name,
-            cost: producto.cost,
+            unitCost: producto.cost,
             currency: producto.currency,
-            cantidad: 1
+            count: 1,
+            src:producto.images[0]
         };
 
         if (getlocal != null && getlocal != "" && getlocal != false && getlocal != undefined) {
@@ -193,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             });
 
             if (bandera) {
-                parslocal[cont].cantidad++;
+                parslocal[cont].count++;
             } else {
                 parslocal[parslocal.length] = precio;
             }

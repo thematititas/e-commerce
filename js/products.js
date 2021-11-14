@@ -63,8 +63,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
             result.data.forEach(product => {
                 if (product.category == JSON.parse(localStorage.getItem('category-id')).categoryId) {
                     productarray = product.array;
-                    algo = JSON.parse(localStorage.getItem('category-id')).categoryId
-                    document.querySelector(`#${algo}`).checked = true;
                     showArray(productarray);
                     
                 }
@@ -121,11 +119,4 @@ document.addEventListener("DOMContentLoaded", function (e) {
         showArray(productarray);
     });
     
-    document.getElementById("Autos").addEventListener('input', function () {
-        if(document.querySelector("#Autos").checked){
-        alert(1);
-        } else {
-            alert(2);
-        }
-    });
 });
