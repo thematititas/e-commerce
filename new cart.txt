@@ -1,0 +1,6 @@
+Nombre: Chevrolet Onix Joy,
+Precio: 13500,
+Moneda: USD,
+Cantidad: 1,
+Foto: img/Autos/prod1.jpg
+
